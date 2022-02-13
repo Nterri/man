@@ -752,8 +752,13 @@ body.lock {
 
 .collection__content {
   padding: 10.9% 0;
-  max-width: 50%;
   text-align: center;
+}
+
+@media (min-width: 601px) {
+  .collection__content {
+    max-width: 50%;
+  }
 }
 
 .collection__title::after {
