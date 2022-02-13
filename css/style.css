@@ -514,32 +514,140 @@ body.lock {
   }
 }
 
-.season {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 80px;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  padding: 0 15px;
+.season__container {
+  max-width: 1920px;
 }
 
-@media (max-width: 1900px) {
-  .season {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+@media (min-width: 993px) {
+  .season__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+
+.season__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+}
+
+.season__content {
+  max-width: -webkit-max-content;
+  max-width: -moz-max-content;
+  max-width: max-content;
+  padding: 4.85% 0;
+  margin: 0 auto;
+}
+
+@media (min-width: 993px) {
+  .season__content {
+    margin: 0 0 0 auto;
   }
 }
 
 .season__title {
-  margin: 93px 0 0 0;
+  margin: 0 auto;
 }
 
 .season__title::after {
   margin: 50px auto;
+}
+
+.season__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  gap: 50px;
+}
+
+@media (min-width: 993px) {
+  .season__items {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
+  }
+}
+
+@media (min-width: 1025px) {
+  .season__item:hover .item__image {
+    -webkit-transform: scale(1.1);
+            transform: scale(1.1);
+  }
+  .season__item:hover .item__name {
+    -webkit-transform: translate(10px, 0);
+            transform: translate(10px, 0);
+  }
+  .season__item:hover .item__sum {
+    -webkit-transform: translate(15px, 0);
+            transform: translate(15px, 0);
+  }
+}
+
+.item__image {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+.item__name {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-family: Playfair Display;
+  font-size: 18px;
+  line-height: 21px;
+  margin: 25px 0 10px;
+}
+
+.item__sum {
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  font-family: Playfair Display;
+  font-size: 16px;
+  line-height: 19px;
+  color: #d0d0d0;
+}
+
+.season__img {
+  padding: 200px 0 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 15, 0.5)), to(rgba(15, 15, 15, 0.5))), url(../png/collection.png) center/cover no-repeat, #000000;
+  background: linear-gradient(0deg, rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url(../png/collection.png) center/cover no-repeat, #000000;
+}
+
+@media (min-width: 993px) {
+  .season__img {
+    padding: 36.8em 0 7.2em;
+  }
+}
+
+@media (min-width: 993px) {
+  .season__img {
+    margin: 0 0 0 80px;
+  }
+}
+
+.season__title-collection::after {
+  margin: 30px auto;
 }
 
 .title {
@@ -562,105 +670,6 @@ body.lock {
   .title {
     font-size: 26px;
   }
-}
-
-.season__items {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  gap: 50px;
-}
-
-.season__item {
-  cursor: pointer;
-}
-
-@media (max-width: 920px) {
-  .season__item {
-    text-align: center;
-  }
-}
-
-@media (min-width: 1025px) {
-  .season__item {
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .season__item img {
-    -webkit-transition: all 0.3s;
-    transition: all 0.3s;
-  }
-  .season__item:hover {
-    -webkit-transform: translate(0, -10px);
-            transform: translate(0, -10px);
-  }
-  .season__item:hover img {
-    -webkit-transform: scale(1.1);
-            transform: scale(1.1);
-  }
-}
-
-.item__image {
-  display: inline-block;
-  background: #191b1c;
-}
-
-.item__image img {
-  padding: 55px 22px;
-}
-
-.item__name {
-  font-family: Playfair Display;
-  font-size: 18px;
-  line-height: 21px;
-  margin: 25px 0 10px 0;
-}
-
-.item__sum {
-  font-family: Playfair Display;
-  font-size: 16px;
-  line-height: 19px;
-}
-
-.season__img {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 15, 0.5)), to(rgba(15, 15, 15, 0.5))), url(../png/collection.png) 0 center no-repeat, #000000;
-  background: linear-gradient(0deg, rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url(../png/collection.png) 0 center no-repeat, #000000;
-  padding: 484px 0 100px;
-  text-align: center;
-}
-
-@media (max-width: 1900px) {
-  .season__img {
-    background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 15, 0.5)), to(rgba(15, 15, 15, 0.5))), url(../png/collection.png) center no-repeat, #000000;
-    background: linear-gradient(0deg, rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url(../png/collection.png) center no-repeat, #000000;
-  }
-}
-
-@media (min-width: 1901px) {
-  .season__img {
-    padding: 484px 252px 100px;
-  }
-}
-
-@media (max-width: 768px) {
-  .season__img {
-    padding: 200px 0 100px;
-  }
-}
-
-@media (max-width: 480px) {
-  .season__img {
-    padding: 100px 0;
-  }
-}
-
-.season__title-collection::after {
-  margin: 30px auto;
 }
 
 .btn {
@@ -689,75 +698,70 @@ body.lock {
   }
 }
 
-.collection {
+.collection__container {
+  max-width: 1920px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+@media (max-width: 992px) {
+  .collection__container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+  }
+}
+
+.collection__image {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 15, 0.5)), to(rgba(15, 15, 15, 0.5))), url(../png/collection2.png) center/cover no-repeat, #000000;
+  background: linear-gradient(0deg, rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url(../png/collection2.png) center/cover no-repeat, #000000;
+}
+
+@media (min-width: 993px) {
+  .collection__image {
+    margin: 0 80px 0 0;
+  }
+}
+
+@media (max-width: 992px) {
+  .collection__img {
+    padding: 23.45% 0;
+    min-height: 452px;
+  }
+}
+
+.collection__body {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 50%;
+          flex: 0 1 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
 }
 
-@media (max-width: 1901px) {
-  .collection {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: column-reverse;
-            flex-direction: column-reverse;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-  }
-}
-
-.collection__image {
-  max-width: 880px;
-}
-
-.collection__img {
-  background: -webkit-gradient(linear, left bottom, left top, from(rgba(15, 15, 15, 0.5)), to(rgba(15, 15, 15, 0.5))), url(../png/collection2.png) center/cover no-repeat, #000000;
-  background: linear-gradient(0deg, rgba(15, 15, 15, 0.5), rgba(15, 15, 15, 0.5)), url(../png/collection2.png) center/cover no-repeat, #000000;
-  width: 880px;
-  height: 600px;
-}
-
-@media (max-width: 900px) {
-  .collection__img {
-    width: 600px;
-    height: 410px;
-  }
-}
-
-@media (max-width: 768px) {
-  .collection__img {
-    display: none;
-  }
-}
-
-.collection__body {
+.collection__content {
+  padding: 10.9% 0;
+  max-width: 50%;
   text-align: center;
-  padding: 100px 285px;
-}
-
-@media (max-width: 900px) {
-  .collection__body {
-    padding: 100px;
-  }
-}
-
-@media (max-width: 630px) {
-  .collection__body {
-    padding: 50px;
-  }
 }
 
 .collection__title::after {
   margin: 40px auto;
 }
 
-.collection__text {
-  max-width: 471px;
-  margin: 0 0 61px 0;
+.collection__button {
+  margin: 61px 0 0 0;
 }
 
 .new {
